@@ -2,16 +2,105 @@
 let newStyle = `
 	<style>
 		.row-outline {
-			outline: 1px solid #00cec9;
-			background: #c3edf6;
+			outline: 5px solid #00cec9 !important;
+			border-radius: 2px !important;
+			background: #c3edf6 !important;
 		}
 
-		.row-checked {
+		.row-checked.row-checked {
 			background: #c3f6c6 !important;
 		}
 
 		.display-none {
 			display: none !important;
+		}
+
+		/* --------------------------------------------- */
+		/* -- some quality of life style improvements -- */
+		/* --------------------------------------------- */
+		@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+		body {
+			font-family: 'open sans';
+		}
+
+		.advertisement-leaderboard {
+			min-height: auto !important;
+		}
+
+		.moduletable th {
+			background: #3F3A60 !important;
+			color: white !important;
+			border-top: 1px dotted #d8d4ce;
+		}
+		[id^='GSUB_markread_status_'] {
+			display: inline-flex;
+			flex: 1;
+			align-items: center;
+			background: #3F3A60;
+			width: 100%;
+			border-radius: 5px !important;
+		}
+		[id^='GSUB_markread_status_'] a:link {
+			display: inline-flex;
+			flex: 1;
+			height: 100%;
+			line-height: 4;
+			align-items: center;
+			background: #3F3A60;
+			color: white;
+			width: 100%;
+			justify-content: center;
+			text-transform: uppercase;
+			font-size: .8em;
+		}
+		[id^='GSUB_markread_status_'] a:hover {
+			color: yellow;
+		}
+		[id^='GSUB_itemline_thread_'] td:nth-child(4) {
+			width: 1% !important;
+		}
+		.geeksub_module_hangindent {
+			position: relative;
+		}
+		.geeksub_module_hangindent > span:nth-child(3):not(.geeksub_minorlink) {
+			box-sizing: border-box;
+			display: block;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			padding-left: 10px;
+		}
+		.geeksub_module_hangindent > span:nth-child(3):not(.geeksub_minorlink) > a {
+			width: 95%;
+			display: block;
+			position: absolute;
+			top: -7px;
+			bottom: -20px;
+			line-height: 2.7;
+			padding-left: 9px;
+			overflow: hidden;
+		}
+		.geeksub_module_hangindent > span:nth-child(3):not(.geeksub_minorlink) > a:hover {
+			color: #000;
+			text-decoration: underline;
+		}
+		.innermoduletable tr:hover > td {
+			outline: 1px solid #BBB;
+		}
+		.innermoduletable tr:hover > td a {
+			font-weight: 600;
+		}
+		form[action="/quickbar.php"] table td label { width: 100%; }
+		form[action="/quickbar.php"] input[type="text"] {
+			padding: 2px 4px;
+			line-height: 1.38;
+			font-size: 1.1em;
+			font-weight: 400;
+			border-style: dotted;
+			border-color: #bbb;
+			border-radius: 4px;
+			vertical-align: middle;
 		}
 	</style>
 `
@@ -88,7 +177,7 @@ document.addEventListener("keydown", (event) => {
 			moveCursorPreviousMessage()
 		}
 		//-----------------------
-		//-- Enter - goto post --
+		//-- Enter - open post --
 		//-----------------------
 		else if (event.code === "Enter") {
 			let thisLink = document.querySelectorAll(`#${currentRowId} a[href^='/thread/']`)[0]
