@@ -3,7 +3,7 @@
 	"name": "BGG Keyboard Forum Selector",
 	"description": "select and delete forum posts from your subscription list using keyboard shortcuts",
 	"author": "Justin Parker",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"icons": {
 		"16": "icon16.png",
 		"48": "icon48.png",
@@ -15,9 +15,10 @@
 	},
 	"content_scripts": [
 		{
-			"js": ["content-script.js", "inject.js"],
+			"js": ["content-script.js", "injectList.js", "injectThread.js"],
 			"matches": [
-				"https://boardgamegeek.com/subscriptions/*"
+				"https://boardgamegeek.com/subscriptions/*",
+				"https://boardgamegeek.com/thread/*"
 			]
 		}
 	],
