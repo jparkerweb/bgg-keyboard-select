@@ -494,5 +494,10 @@ if (window.location.href.indexOf('https://boardgamegeek.com/subscriptions') == 0
 	// ============================
 	function hideAd() {
 		document.querySelector(".advertisement-leaderboard").classList.add("display-none")
+		document.querySelectorAll("div[hide-ad-block]").forEach(
+			function(elm) {
+				elm.classList.add("display-none")
+			}
+		)
 	}
 }
