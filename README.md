@@ -1,7 +1,7 @@
 # BGG Keyboard Forum Selector
+⌨ Select and delete forum posts from your subscription list on Board Game Geek using keyboard shortcuts.
 
-Google Chrome extension.  
-Select and delete forum posts from your subscription list on Board Game Geek using keyboard shortcuts:  
+Google Chrome extension:  
 https://chrome.google.com/webstore/detail/bgg-keyboard-forum-select/lgklpplajhokodceladngaieaiokdfjg
 
 Please submit issues and ideas here:  
